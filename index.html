@@ -28,7 +28,7 @@
                 <li><a href="#services" class="nav-link">Menu</a></li>
                 <li><a href="#gallery" class="nav-link">Gallery</a></li>
                 <li><a href="#testimonials" class="nav-link">Reviews</a></li>
-                <li><a href="#contact" class="btn btn-nav">Order Now</a></li>
+                <li><a href="#" class="btn btn-nav" onclick="openOrderModal(event)">Order Now</a></li>
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -70,10 +70,10 @@
                 </div>
 
                 <div class="hero-ctas">
-                    <a href="#contact" class="btn btn-primary btn-lg">
+                    <a href="#" class="btn btn-primary btn-lg" onclick="openOrderModal(event)">
                         <i class="fas fa-shopping-bag"></i> Order Pickup
                     </a>
-                    <a href="#contact" class="btn btn-secondary btn-lg">
+                    <a href="#" class="btn btn-secondary btn-lg" onclick="openOrderModal(event)">
                         <i class="fas fa-truck"></i> Order Delivery
                     </a>
                 </div>
@@ -162,7 +162,7 @@
                     </div>
                 </div>
 
-                <a href="#contact" class="btn btn-primary btn-lg">Start Your Flavor Journey</a>
+                <a href="#" class="btn btn-primary btn-lg" onclick="openOrderModal(event)">Start Your Flavor Journey</a>
             </div>
         </div>
     </section>
@@ -212,7 +212,7 @@
                 </div>
             </div>
             <div class="gallery-item gallery-item-6">
-                <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500&h=500&fit=crop" alt="Special Cakes">
+                <img src="https://images.unsplash.com/photo-1495521821757-a1efb6729352?w=500&h=500&fit=crop" alt="Special Cakes">
                 <div class="gallery-overlay">
                     <h3>Custom Creations</h3>
                     <p>Your Vision, Our Magic</p>
@@ -234,42 +234,42 @@
                 <h3>Custom Cakes</h3>
                 <p>Bespoke cakes designed for your special moments. From elegant designs to creative themes, we bring your vision to life with premium flavors and stunning decoration.</p>
                 <div class="service-prices">From $35</div>
-                <a href="#contact" class="service-link">Order Now →</a>
+                <a href="#" class="service-link" onclick="openOrderModal(event)">Order Now →</a>
             </div>
             <div class="service-card">
                 <div class="service-icon-large">🥐</div>
                 <h3>Pastries & Croissants</h3>
                 <p>Buttery, flaky pastries made fresh daily. Perfect for breakfast, dessert, or any time you want something indulgent and authentically French-inspired.</p>
                 <div class="service-prices">From $5</div>
-                <a href="#contact" class="service-link">Order Now →</a>
+                <a href="#" class="service-link" onclick="openOrderModal(event)">Order Now →</a>
             </div>
             <div class="service-card">
                 <div class="service-icon-large">🍪</div>
                 <h3>Biscuits & Cookies</h3>
                 <p>Crispy, delicious biscuits and cookies in a variety of flavors. Perfect for gifts, sharing, or enjoying with your morning coffee or afternoon tea.</p>
                 <div class="service-prices">From $8</div>
-                <a href="#contact" class="service-link">Order Now →</a>
+                <a href="#" class="service-link" onclick="openOrderModal(event)">Order Now →</a>
             </div>
             <div class="service-card">
                 <div class="service-icon-large">☕</div>
                 <h3>Premium Coffee & Tea</h3>
                 <p>Pair your baked goods with our carefully selected coffee and tea. Sourced from the best roasters and premium tea suppliers worldwide.</p>
                 <div class="service-prices">From $3</div>
-                <a href="#contact" class="service-link">Order Now →</a>
+                <a href="#" class="service-link" onclick="openOrderModal(event)">Order Now →</a>
             </div>
             <div class="service-card">
                 <div class="service-icon-large">🧁</div>
                 <h3>Cupcakes & Donuts</h3>
                 <p>Individually portioned delights. Great for parties, events, or whenever you want a single-serving treat with maximum flavor and style.</p>
                 <div class="service-prices">From $4</div>
-                <a href="#contact" class="service-link">Order Now →</a>
+                <a href="#" class="service-link" onclick="openOrderModal(event)">Order Now →</a>
             </div>
             <div class="service-card">
                 <div class="service-icon-large">🎁</div>
                 <h3>Gift Boxes</h3>
                 <p>Beautifully packaged gift boxes perfect for any occasion. Show someone you care with our premium selections in stunning presentation.</p>
                 <div class="service-prices">From $25</div>
-                <a href="#contact" class="service-link">Order Now →</a>
+                <a href="#" class="service-link" onclick="openOrderModal(event)">Order Now →</a>
             </div>
         </div>
     </section>
@@ -361,7 +361,7 @@
                     <h3>Order Options</h3>
                     <p>Quick Pickup or Fast Delivery</p>
                     <p class="contact-subtext">Same-day service available</p>
-                    <a href="tel:+19425884545" class="btn btn-primary btn-sm">Place Order</a>
+                    <a href="#" class="btn btn-primary btn-sm" onclick="openOrderModal(event)">Place Order</a>
                 </div>
             </div>
 
@@ -373,6 +373,145 @@
             </div>
         </div>
     </section>
+
+    <!-- Order Modal -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>🎂 Place Your Order</h2>
+                <span class="close" onclick="closeOrderModal()">&times;</span>
+            </div>
+            
+            <form id="orderForm" class="order-form">
+                <!-- Customer Info -->
+                <div class="form-section">
+                    <h3>Your Details</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="customerName">Full Name *</label>
+                            <input type="text" id="customerName" name="customerName" required placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="customerPhone">Phone Number *</label>
+                            <input type="tel" id="customerPhone" name="customerPhone" required placeholder="(123) 456-7890">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerEmail">Email *</label>
+                        <input type="email" id="customerEmail" name="customerEmail" required placeholder="you@example.com">
+                    </div>
+                </div>
+
+                <!-- Order Type -->
+                <div class="form-section">
+                    <h3>Order Type</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="orderType">Select Type *</label>
+                            <select id="orderType" name="orderType" required>
+                                <option value="">Choose order type...</option>
+                                <option value="Pickup">Pickup</option>
+                                <option value="Delivery">Delivery</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Items Selection -->
+                <div class="form-section">
+                    <h3>What Would You Like?</h3>
+                    <div class="items-grid">
+                        <div class="item-checkbox">
+                            <input type="checkbox" id="item1" name="items" value="Custom Cake ($35+)">
+                            <label for="item1">🎂 Custom Cake ($35+)</label>
+                        </div>
+                        <div class="item-checkbox">
+                            <input type="checkbox" id="item2" name="items" value="Pastries ($5+)">
+                            <label for="item2">🥐 Pastries ($5+)</label>
+                        </div>
+                        <div class="item-checkbox">
+                            <input type="checkbox" id="item3" name="items" value="Biscuits & Cookies ($8+)">
+                            <label for="item3">🍪 Biscuits & Cookies ($8+)</label>
+                        </div>
+                        <div class="item-checkbox">
+                            <input type="checkbox" id="item4" name="items" value="Coffee & Tea ($3+)">
+                            <label for="item4">☕ Coffee & Tea ($3+)</label>
+                        </div>
+                        <div class="item-checkbox">
+                            <input type="checkbox" id="item5" name="items" value="Cupcakes & Donuts ($4+)">
+                            <label for="item5">🧁 Cupcakes & Donuts ($4+)</label>
+                        </div>
+                        <div class="item-checkbox">
+                            <input type="checkbox" id="item6" name="items" value="Gift Boxes ($25+)">
+                            <label for="item6">🎁 Gift Boxes ($25+)</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Date & Time -->
+                <div class="form-section">
+                    <h3>When Do You Need It?</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="orderDate">Preferred Date *</label>
+                            <input type="date" id="orderDate" name="orderDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="orderTime">Preferred Time *</label>
+                            <input type="time" id="orderTime" name="orderTime" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Delivery Address (if delivery) -->
+                <div class="form-section" id="deliverySection" style="display: none;">
+                    <h3>Delivery Address</h3>
+                    <div class="form-group">
+                        <label for="deliveryAddress">Street Address *</label>
+                        <input type="text" id="deliveryAddress" name="deliveryAddress" placeholder="123 Main Street">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="deliveryCity">City *</label>
+                            <input type="text" id="deliveryCity" name="deliveryCity" placeholder="Mississauga">
+                        </div>
+                        <div class="form-group">
+                            <label for="deliveryPostal">Postal Code *</label>
+                            <input type="text" id="deliveryPostal" name="deliveryPostal" placeholder="L4T 3Z9">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Special Requests -->
+                <div class="form-section">
+                    <h3>Special Requests</h3>
+                    <div class="form-group">
+                        <label for="specialRequests">Tell us your preferences</label>
+                        <textarea id="specialRequests" name="specialRequests" placeholder="Any allergies, special instructions, or custom requests?" rows="4"></textarea>
+                    </div>
+                </div>
+
+                <!-- Submit -->
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" onclick="closeOrderModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary btn-lg">
+                        <i class="fas fa-check"></i> Confirm Order
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content modal-success">
+            <div class="success-icon">✅</div>
+            <h2>Order Received!</h2>
+            <p>Thank you for your order! We've recorded your details and will contact you soon to confirm.</p>
+            <div class="order-summary" id="orderSummary"></div>
+            <button class="btn btn-primary" onclick="closeSuccessModal()">Done</button>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
